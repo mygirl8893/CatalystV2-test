@@ -13,7 +13,7 @@
  * for both condominiumd and condominium-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("Condominium Core");
+const std::string CLIENT_NAME("Catalyst Core");
 
 /**
  * Client version number

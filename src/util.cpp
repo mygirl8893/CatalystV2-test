@@ -6,7 +6,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/condominium-config.h"
+#include "config/catalyst-config.h"
 #endif
 
 #include "util.h"
@@ -238,7 +238,7 @@ bool LogAcceptCategory(const char* category)
             ptrCategory.reset(new set<string>(categories.begin(), categories.end()));
             // thread_specific_ptr automatically deletes the set when the thread ends.
             // "condominium" is a composite category enabling all Condominium-related debug output
-            if (ptrCategory->count(string("condominium"))) {
+            if (ptrCategory->count(string("catalyst"))) {
                 ptrCategory->insert(string("obfuscation"));
                 ptrCategory->insert(string("swiftx"));
                 ptrCategory->insert(string("masternode"));
@@ -403,7 +403,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "condominium";
+    const char* pszModule = "catalyst";
 #endif
     if (pex)
         return strprintf(
@@ -430,7 +430,7 @@ boost::filesystem::path GetDefaultDataDir()
 // Unix: ~/.condominium
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Condominium";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "Catalyst";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -442,10 +442,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "Condominium";
+    return pathRet / "Catalyst";
 #else
     // Unix
-    return pathRet / ".condominium";
+    return pathRet / ".catalyst";
 #endif
 #endif
 }
@@ -492,7 +492,7 @@ void ClearDatadirCache()
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "condominium.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "catalyst.conf"));
     if (!pathConfigFile.is_complete())
         pathConfigFile = GetDataDir(false) / pathConfigFile;
 
@@ -537,7 +537,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 #ifndef WIN32
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "condominiumd.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "catalystd.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }
