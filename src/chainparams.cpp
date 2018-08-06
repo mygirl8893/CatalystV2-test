@@ -106,8 +106,8 @@ public:
         pchMessageStart[3] = 0x35;
         vAlertPubKey = ParseHex("0370a5a13eb54a2e37bd896127737138884fcc5cf7231fdf9a0e1c5ca61f023c36");
         nDefaultPort = 11200;
-        bnProofOfWorkLimit = ~uint256(0) >> 10; //20 Condominium starting difficulty is 1 / 2^12
-        nSubsidyHalvingInterval = 8400000;
+        bnProofOfWorkLimit = ~uint256(0) >> 20; //20 Condominium starting difficulty is 1 / 2^12
+        nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
@@ -116,9 +116,9 @@ public:
         nTargetTimespan = 1 * 30; // Condominium: 0.5 minutes
         nTargetSpacingSlowLaunch = 10 * 60;  // Condominium: 10 minutes (Slow launch - Block 288)
         nTargetSpacing = 1 * 60;  // Condominium: 60 Seconds
-        nMaturity = 60;
+        nMaturity = 49;
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 2100000000 * COIN;
+        nMaxMoneyOut = 3500000000 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 600;
@@ -153,7 +153,7 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1527974340;
+        genesis.nTime = 1533565382;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 236551;
 
@@ -161,8 +161,8 @@ public:
         assert(hashGenesisBlock == uint256("0x000003f46e57c04e31374710022a6685abea12cb99960dfe96eaaa430edc670f"));
         assert(genesis.hashMerkleRoot == uint256("0x90d274dca16659997d8f5fc9644127d260087d4a39ca61ba9b3334482aa8c55d"));
 
-    		  vSeeds.push_back(CDNSSeedData("seed1.catalyst.cash", "seed1.catalyst.cash"));             // seed1
-          vSeeds.push_back(CDNSSeedData("seed2.catalyst.cash", "seed2.catalyst.cash"));             // seed2
+    	vSeeds.push_back(CDNSSeedData("seed1.catalyst.cash", "seed1.catalyst.cash"));             // seed1
+        vSeeds.push_back(CDNSSeedData("seed2.catalyst.cash", "seed2.catalyst.cash"));             // seed2
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 28); // C
