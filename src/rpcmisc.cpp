@@ -66,17 +66,17 @@ Value getinfo(const Array& params, bool fHelp)
             "  \"difficulty\": xxxxxx,       (numeric) the current difficulty\n"
             "  \"testnet\": true|false,      (boolean) if the server is using testnet or not\n"
             "  \"moneysupply\" : \"supply\"       (numeric) The money supply when this block was added to the blockchain\n"
-            "  \"zCDMsupply\" :\n"
+            "  \"zXATsupply\" :\n"
             "  {\n"
-            "     \"1\" : n,            (numeric) supply of 1 zCDM denomination\n"
-            "     \"5\" : n,            (numeric) supply of 5 zCDM denomination\n"
-            "     \"10\" : n,           (numeric) supply of 10 zCDM denomination\n"
-            "     \"50\" : n,           (numeric) supply of 50 zCDM denomination\n"
-            "     \"100\" : n,          (numeric) supply of 100 zCDM denomination\n"
-            "     \"500\" : n,          (numeric) supply of 500 zCDM denomination\n"
-            "     \"1000\" : n,         (numeric) supply of 1000 zCDM denomination\n"
-            "     \"5000\" : n,         (numeric) supply of 5000 zCDM denomination\n"
-            "     \"total\" : n,        (numeric) The total supply of all zCDM denominations\n"
+            "     \"1\" : n,            (numeric) supply of 1 zXAT denomination\n"
+            "     \"5\" : n,            (numeric) supply of 5 zXAT denomination\n"
+            "     \"10\" : n,           (numeric) supply of 10 zXAT denomination\n"
+            "     \"50\" : n,           (numeric) supply of 50 zXAT denomination\n"
+            "     \"100\" : n,          (numeric) supply of 100 zXAT denomination\n"
+            "     \"500\" : n,          (numeric) supply of 500 zXAT denomination\n"
+            "     \"1000\" : n,         (numeric) supply of 1000 zXAT denomination\n"
+            "     \"5000\" : n,         (numeric) supply of 5000 zXAT denomination\n"
+            "     \"total\" : n,        (numeric) The total supply of all zXAT denominations\n"
             "  }\n"
             "  \"keypoololdest\": xxxxxx,    (numeric) the timestamp (seconds since GMT epoch) of the oldest pre-generated key in the key pool\n"
             "  \"keypoolsize\": xxxx,        (numeric) how many new keys are pre-generated\n"
@@ -114,7 +114,7 @@ Value getinfo(const Array& params, bool fHelp)
         zcondominiumObj.push_back(Pair(to_string(denom), ValueFromAmount(chainActive.Tip()->mapZerocoinSupply.at(denom) * (denom*COIN))));
     }
     zcondominiumObj.emplace_back(Pair("total", ValueFromAmount(chainActive.Tip()->GetZerocoinSupply())));
-    obj.emplace_back(Pair("zCDMsupply", zcondominiumObj));
+    obj.emplace_back(Pair("zXATsupply", zcondominiumObj));
     
 #ifdef ENABLE_WALLET
     if (pwalletMain) {
