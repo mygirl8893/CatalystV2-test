@@ -5,7 +5,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/condominium-config.h"
+#include "config/catalyst-config.h"
 #endif
 
 #include "optionsmodel.h"
@@ -61,7 +61,7 @@ void OptionsModel::Init()
 
     // Display
     if (!settings.contains("nDisplayUnit"))
-        settings.setValue("nDisplayUnit", BitcoinUnits::CONDOMINIUM);
+        settings.setValue("nDisplayUnit", BitcoinUnits::CATALYST);
     nDisplayUnit = settings.value("nDisplayUnit").toInt();
 
     if (!settings.contains("strThirdPartyTxUrls"))
@@ -79,10 +79,10 @@ void OptionsModel::Init()
         settings.setValue("nZeromintPercentage", 10);
     nZeromintPercentage = settings.value("nZeromintPercentage").toLongLong();
 
-    if (!settings.contains("nAnonymizeCondominiumAmount"))
-        settings.setValue("nAnonymizeCondominiumAmount", 1000);
+    if (!settings.contains("nAnonymizeCatalystAmount"))
+        settings.setValue("nAnonymizeCatalystAmount", 1000);
 
-    nAnonymizeCondominiumAmount = settings.value("nAnonymizeCondominiumAmount").toLongLong();
+    nAnonymizeCatalystAmount = settings.value("nAnonymizeCatalystAmount").toLongLong();
 
     if (!settings.contains("fShowMasternodesTab"))
         settings.setValue("fShowMasternodesTab", masternodeConfig.getCount());
@@ -151,8 +151,8 @@ void OptionsModel::Init()
         SoftSetArg("-zeromintpercentage", settings.value("nZeromintPercentage").toString().toStdString());
     if (settings.contains("nPreferredDenom"))
         SoftSetArg("-preferredDenom", settings.value("nPreferredDenom").toString().toStdString());
-    if (settings.contains("nAnonymizeCondominiumAmount"))
-        SoftSetArg("-anonymizecondominiumamount", settings.value("nAnonymizeCondominiumAmount").toString().toStdString());
+    if (settings.contains("nAnonymizeCatalystAmount"))
+        SoftSetArg("-anonymizeCatalystamount", settings.value("nAnonymizeCatalystAmount").toString().toStdString());
 
     language = settings.value("language").toString();
 }
@@ -234,8 +234,8 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return QVariant(nZeromintPercentage);
         case ZeromintPrefDenom:
             return QVariant(nPreferredDenom);
-        case AnonymizeCondominiumAmount:
-            return QVariant(nAnonymizeCondominiumAmount);
+        case AnonymizeCatalystAmount:
+            return QVariant(nAnonymizeCatalystAmount);
         case Listen:
             return settings.value("fListen");
         default:
@@ -350,10 +350,10 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             emit preferredDenomChanged(nPreferredDenom);
             break;
 
-        case AnonymizeCondominiumAmount:
-            nAnonymizeCondominiumAmount = value.toInt();
-            settings.setValue("nAnonymizeCondominiumAmount", nAnonymizeCondominiumAmount);
-            emit anonymizeCondominiumAmountChanged(nAnonymizeCondominiumAmount);
+        case AnonymizeCatalystAmount:
+            nAnonymizeCatalystAmount = value.toInt();
+            settings.setValue("nAnonymizeCatalystAmount", nAnonymizeCatalystAmount);
+            emit anonymizeCatalystAmountChanged(nAnonymizeCatalystAmount);
             break;
         case CoinControlFeatures:
             fCoinControlFeatures = value.toBool();

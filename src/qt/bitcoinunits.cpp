@@ -19,7 +19,7 @@ BitcoinUnits::BitcoinUnits(QObject* parent) : QAbstractListModel(parent),
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(CONDOMINIUM);
+    unitlist.append(CATALYST);
     unitlist.append(mCDM);
     unitlist.append(uCDM);
     return unitlist;
@@ -28,7 +28,7 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 bool BitcoinUnits::valid(int unit)
 {
     switch (unit) {
-    case CONDOMINIUM:
+    case CATALYST:
     case mCDM:
     case uCDM:
         return true;
@@ -40,7 +40,7 @@ bool BitcoinUnits::valid(int unit)
 QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
-    case CONDOMINIUM:
+    case CATALYST:
         return QString("cdm");
     case mCDM:
         return QString("mcdm");
@@ -55,7 +55,7 @@ QString BitcoinUnits::name(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case CONDOMINIUM:
+        case CATALYST:
             return QString("CDM");
         case mCDM:
             return QString("mCDM");
@@ -66,7 +66,7 @@ QString BitcoinUnits::name(int unit)
         }
     } else {
         switch (unit) {
-        case CONDOMINIUM:
+        case CATALYST:
             return QString("tCDM");
         case mCDM:
             return QString("mtCDM");
@@ -82,18 +82,18 @@ QString BitcoinUnits::description(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case CONDOMINIUM:
-            return QString("CONDOMINIUM");
+        case CATALYST:
+            return QString("CATALYST");
         case mCDM:
-            return QString("Milli-CONDOMINIUM (1 / 1" THIN_SP_UTF8 "000)");
+            return QString("Milli-CATALYST (1 / 1" THIN_SP_UTF8 "000)");
         case uCDM:
-            return QString("Micro-CONDOMINIUM (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            return QString("Micro-CATALYST (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case CONDOMINIUM:
+        case CATALYST:
             return QString("TestCDMs");
         case mCDM:
             return QString("Milli-TestCDM (1 / 1" THIN_SP_UTF8 "000)");
@@ -108,7 +108,7 @@ QString BitcoinUnits::description(int unit)
 qint64 BitcoinUnits::factor(int unit)
 {
     switch (unit) {
-    case CONDOMINIUM:
+    case CATALYST:
         return 100000000;
     case mCDM:
         return 100000;
@@ -122,7 +122,7 @@ qint64 BitcoinUnits::factor(int unit)
 int BitcoinUnits::decimals(int unit)
 {
     switch (unit) {
-    case CONDOMINIUM:
+    case CATALYST:
         return 8;
     case mCDM:
         return 5;
