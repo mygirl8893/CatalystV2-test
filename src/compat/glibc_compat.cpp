@@ -1,9 +1,9 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+// file COPYING or http://www.opensource.org/catalyst/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/condominium-config.h"
+#include "config/catalyst-config.h"
 #endif
 
 #include <cstddef>
