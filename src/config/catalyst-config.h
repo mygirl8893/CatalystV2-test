@@ -1,5 +1,5 @@
-/* src/config/condominium-config.h.  Generated from condominium-config.h.in by configure.  */
-/* src/config/condominium-config.h.in.  Generated from configure.ac by autoheader.  */
+/* src/config/catalyst-config.h.  Generated from catalyst-config.h.in by configure.  */
+/* src/config/catalyst-config.h.in.  Generated from configure.ac by autoheader.  */
 
 #ifndef CONDOMINIUM_CONFIG_H
 
@@ -268,16 +268,16 @@
 #define LT_OBJDIR ".libs/"
 
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT "www.condominium.org"
+#define PACKAGE_BUGREPORT "catalyst.cash"
 
 /* Define to the full name of this package. */
-#define PACKAGE_NAME "Condominium Core"
+#define PACKAGE_NAME "Catalyst Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "Condominium Core 1.1.0"
+#define PACKAGE_STRING "Catalyst Core 2.0.0"
 
 /* Define to the one symbol short name of this package. */
-#define PACKAGE_TARNAME "condominium"
+#define PACKAGE_TARNAME "catalyst"
 
 /* Define to the home page for this package. */
 #define PACKAGE_URL ""
