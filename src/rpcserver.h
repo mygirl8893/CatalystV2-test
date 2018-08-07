@@ -96,7 +96,7 @@ public:
 };
 
 /**
- * Condominium RPC command dispatcher.
+ * Catalyst RPC command dispatcher.
  */
 class CRPCTable
 {

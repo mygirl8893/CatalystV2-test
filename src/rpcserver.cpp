@@ -318,7 +318,7 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* Condominium features */
+        /* Catalyst features */
         {"catalyst", "masternode", &masternode, true, true, false},
         {"catalyst", "listmasternodes", &listmasternodes, true, true, false},
         {"catalyst", "getmasternodecount", &getmasternodecount, true, true, false},

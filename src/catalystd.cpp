@@ -65,18 +65,18 @@ bool AppInit(int argc, char* argv[])
     //
     // Parameters
     //
-    // If Qt is used, parameters/condominium.conf are parsed in qt/condominium.cpp's main()
+    // If Qt is used, parameters/catalyst.conf are parsed in qt/catalyst.cpp's main()
     ParseParameters(argc, argv);
 
     // Process help and version before taking care about datadir
     if (mapArgs.count("-?") || mapArgs.count("-help") || mapArgs.count("-version")) {
-        std::string strUsage = _("Condominium Core Daemon") + " " + _("version") + " " + FormatFullVersion() + "\n";
+        std::string strUsage = _("Catalyst Core Daemon") + " " + _("version") + " " + FormatFullVersion() + "\n";
 
         if (mapArgs.count("-version")) {
             strUsage += LicenseInfo();
         } else {
             strUsage += "\n" + _("Usage:") + "\n" +
-                        "  condominiumd [options]                     " + _("Start Condominium Core Daemon") + "\n";
+                        "  catalystd [options]                     " + _("Start Catalyst Core Daemon") + "\n";
 
             strUsage += "\n" + HelpMessage(HMM_BITCOIND);
         }
@@ -112,17 +112,17 @@ bool AppInit(int argc, char* argv[])
         // Command-line RPC
         bool fCommandLine = false;
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "condominium:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "catalyst:"))
                 fCommandLine = true;
 
         if (fCommandLine) {
-            fprintf(stderr, "Error: There is no RPC client functionality in condominiumd anymore. Use the condominium-cli utility instead.\n");
+            fprintf(stderr, "Error: There is no RPC client functionality in catalystd anymore. Use the catalyst-cli utility instead.\n");
             exit(1);
         }
 #ifndef WIN32
         fDaemon = GetBoolArg("-daemon", false);
         if (fDaemon) {
-            fprintf(stdout, "Condominium server starting\n");
+            fprintf(stdout, "Catalyst server starting\n");
 
             // Daemonize
             pid_t pid = fork();
@@ -175,7 +175,7 @@ int main(int argc, char* argv[])
 {
     SetupEnvironment();
 
-    // Connect condominiumd signal handlers
+    // Connect catalystd signal handlers
     noui_connect();
 
     return (AppInit(argc, argv) ? 0 : 1);

@@ -445,9 +445,9 @@ bool RemoveSerialFromDB(const CBigNum& bnSerial);
 int GetZerocoinStartHeight();
 bool IsTransactionInChain(uint256 txId, int& nHeightTx);
 bool IsBlockHashInChain(const uint256& hashBlock);
-void RecalculateZCONDOMINIUMSpent();
-void RecalculateZCONDOMINIUMMinted();
-bool RecalculateCONDOMINIUMSupply(int nHeightStart);
+void RecalculateZAriASpent();
+void RecalculateZAriAMinted();
+bool RecalculateAriASupply(int nHeightStart);
 
 
 /**

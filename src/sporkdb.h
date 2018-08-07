@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef CONDOMINIUM_CSPORKDB_H
-#define CONDOMINIUM_CSPORKDB_H
+#ifndef AriA_CSPORKDB_H
+#define AriA_CSPORKDB_H
 
 #include <boost/filesystem/path.hpp>
 #include "leveldbwrapper.h"
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //CONDOMINIUM_CSPORKDB_H
+#endif //AriA_CSPORKDB_H

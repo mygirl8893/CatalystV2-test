@@ -632,7 +632,7 @@ void ThreadImport(std::vector<boost::filesystem::path> vImportFiles)
 }
 
 /** Sanity checks
- *  Ensure that Condominium is running in a usable environment with all
+ *  Ensure that Catalyst is running in a usable environment with all
  *  necessary library support.
  */
 bool InitSanityCheck(void)
@@ -649,7 +649,7 @@ bool InitSanityCheck(void)
 }
 
 
-/** Initialize condominium.
+/** Initialize catalyst.
  *  @pre Parameters should be parsed and config file should be read.
  */
 bool AppInit2(boost::thread_group& threadGroup)
@@ -932,7 +932,7 @@ bool AppInit2(boost::thread_group& threadGroup)
     if (strWalletFile != boost::filesystem::basename(strWalletFile) + boost::filesystem::extension(strWalletFile))
         return InitError(strprintf(_("Wallet %s resides outside data directory %s"), strWalletFile, strDataDir));
 #endif
-    // Make sure only a single Condominium process is using the data directory.
+    // Make sure only a single Catalyst process is using the data directory.
     boost::filesystem::path pathLockFile = GetDataDir() / ".lock";
     FILE* file = fopen(pathLockFile.string().c_str(), "a"); // empty lock file; created if it doesn't exist.
     if (file) fclose(file);
@@ -1329,7 +1329,7 @@ bool AppInit2(boost::thread_group& threadGroup)
                 if (fReindex)
                     pblocktree->WriteReindexing(true);
 
-                // Condominium: load previous sessions sporks if we have them.
+                // Catalyst: load previous sessions sporks if we have them.
                 uiInterface.InitMessage(_("Loading sporks..."));
                 LoadSporksFromDB();
 
@@ -1359,10 +1359,10 @@ bool AppInit2(boost::thread_group& threadGroup)
                 // Recalculate money supply for blocks that are impacted by accounting issue after zerocoin activation
                 if (GetBoolArg("-reindexmoneysupply", false)) {
                     if (chainActive.Height() >= Params().Zerocoin_AccumulatorStartHeight()) {
-                        RecalculateZCONDOMINIUMMinted();
-                        RecalculateZCONDOMINIUMSpent();
+                        RecalculateZAriAMinted();
+                        RecalculateZAriASpent();
                     }
-                    RecalculateCONDOMINIUMSupply(1);
+                    RecalculateAriASupply(1);
                 }
 
                 // Force recalculation of accumulators.
@@ -1375,7 +1375,7 @@ bool AppInit2(boost::thread_group& threadGroup)
                     }
                 }
 
-                // Condominium: recalculate Accumulator Checkpoints that failed to database properly
+                // Catalyst: recalculate Accumulator Checkpoints that failed to database properly
                 if (!listAccCheckpointsNoDB.empty() && chainActive.Tip()->GetBlockHeader().nVersion >= Params().Zerocoin_HeaderVersion()) {
                     uiInterface.InitMessage(_("Calculating missing accumulators..."));
                     LogPrintf("%s : finding missing checkpoints\n", __func__);
@@ -1610,8 +1610,8 @@ bool AppInit2(boost::thread_group& threadGroup)
         }
         fVerifyingBlocks = false;
 
-        bool fEnableZCondominiumBackups = GetBoolArg("-backupzcatalyst", true);
-        pwalletMain->setZCondominiumAutoBackups(fEnableZCondominiumBackups);
+        bool fEnableZAriABackups = GetBoolArg("-backupzcatalyst", true);
+        pwalletMain->setZAriAAutoBackups(fEnableZAriABackups);
     }  // (!fDisableWallet)
 #else  // ENABLE_WALLET
     LogPrintf("No wallet compiled in!\n");
@@ -1757,7 +1757,7 @@ bool AppInit2(boost::thread_group& threadGroup)
     }
 
 // XX42 Remove/refactor code below. Until then provide safe defaults
-    nAnonymizeCondominiumAmount = 2;
+    nAnonymizeAriAAmount = 2;
 
 //    nLiquidityProvider = GetArg("-liquidityprovider", 0); //0-100
 //    if (nLiquidityProvider != 0) {
@@ -1766,9 +1766,9 @@ bool AppInit2(boost::thread_group& threadGroup)
 //        nZeromintPercentage = 99999;
 //    }
 //
-//    nAnonymizeCondominiumAmount = GetArg("-anonymizecondominiumamount", 0);
-//    if (nAnonymizeCondominiumAmount > 999999) nAnonymizeCondominiumAmount = 999999;
-//    if (nAnonymizeCondominiumAmount < 2) nAnonymizeCondominiumAmount = 2;
+//    nAnonymizeAriAAmount = GetArg("-anonymizecatalystamount", 0);
+//    if (nAnonymizeAriAAmount > 999999) nAnonymizeAriAAmount = 999999;
+//    if (nAnonymizeAriAAmount < 2) nAnonymizeAriAAmount = 2;
 
     fEnableSwiftTX = GetBoolArg("-enableswifttx", fEnableSwiftTX);
     nSwiftTXDepth = GetArg("-swifttxdepth", nSwiftTXDepth);
@@ -1782,7 +1782,7 @@ bool AppInit2(boost::thread_group& threadGroup)
 
     LogPrintf("fLiteMode %d\n", fLiteMode);
     LogPrintf("nSwiftTXDepth %d\n", nSwiftTXDepth);
-    LogPrintf("Anonymize Catalyst Amount %d\n", nAnonymizeCondominiumAmount);
+    LogPrintf("Anonymize Catalyst Amount %d\n", nAnonymizeAriAAmount);
     LogPrintf("Budget Mode %s\n", strBudgetMode.c_str());
 
     /* Denominations
@@ -1791,8 +1791,8 @@ bool AppInit2(boost::thread_group& threadGroup)
        is convertable to another.
 
        For example:
-       1CONDOMINIUM+1000 == (.1CONDOMINIUM+100)*10
-       10CONDOMINIUM+10000 == (1CONDOMINIUM+1000)*10
+       1XAT+1000 == (.1XAT+100)*10
+       10XAT+10000 == (1XAT+1000)*10
     */
     obfuScationDenominations.push_back((10000 * COIN) + 10000000);
     obfuScationDenominations.push_back((GetMstrNodCollateral(chainActive.Height())*COIN) + 1000000);

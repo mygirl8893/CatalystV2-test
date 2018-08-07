@@ -48,7 +48,7 @@ using namespace std;
 using namespace libzerocoin;
 
 #if defined(NDEBUG)
-#error "Condominium cannot be compiled without assertions."
+#error "Catalyst cannot be compiled without assertions."
 #endif
 
 // 6 comes from OPCODE (1) + vch.size() (1) + BIGNUM size (4)
@@ -2486,7 +2486,7 @@ bool DisconnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex
         const CTransaction& tx = block.vtx[i];
 
         /** UNDO ZEROCOIN DATABASING
-         * note we only undo zerocoin databasing in the following statement, value to and from Condominium
+         * note we only undo zerocoin databasing in the following statement, value to and from Catalyst
          * addresses should still be handled by the typical bitcoin based undo code
          * */
         if (tx.ContainsZerocoins()) {
@@ -2619,11 +2619,11 @@ static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck()
 {
-    RenameThread("condominium-scriptch");
+    RenameThread("Catalyst-scriptch");
     scriptcheckqueue.Thread();
 }
 
-void RecalculateZCONDOMINIUMMinted()
+void RecalculateZAriAMinted()
 {
     CBlockIndex *pindex = chainActive[Params().Zerocoin_AccumulatorStartHeight()];
     int nHeightEnd = chainActive.Height();
@@ -2655,7 +2655,7 @@ void RecalculateZCONDOMINIUMMinted()
     pblocktree->Flush();
 }
 
-void RecalculateZCONDOMINIUMSpent()
+void RecalculateZAriASpent()
 {
     CBlockIndex* pindex = chainActive[Params().Zerocoin_AccumulatorStartHeight()];
     while (true) {
@@ -2692,7 +2692,7 @@ void RecalculateZCONDOMINIUMSpent()
     pblocktree->Flush();
 }
 
-bool RecalculateCONDOMINIUMSupply(int nHeightStart)
+bool RecalculateAriASupply(int nHeightStart)
 {
     if (nHeightStart > chainActive.Height())
         return false;
@@ -2929,9 +2929,9 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     std::list<libzerocoin::CoinDenomination> listSpends = ZerocoinSpendListFromBlock(block);
 
     if (!fVerifyingBlocks && pindex->nHeight == Params().Zerocoin_StartHeight() + 1) {
-        RecalculateZCONDOMINIUMMinted();
-        RecalculateZCONDOMINIUMSpent();
-        RecalculateCONDOMINIUMSupply(1);
+        RecalculateZAriAMinted();
+        RecalculateZAriASpent();
+        RecalculateAriASupply(1);
     }
 
     // Initialize zerocoin supply to the supply from previous block
@@ -3132,7 +3132,7 @@ void static UpdateTip(CBlockIndex* pindexNew)
 {
     chainActive.SetTip(pindexNew);
 
-    // If turned on AutoZeromint will automatically convert CONDOMINIUM to zCDM
+    // If turned on AutoZeromint will automatically convert XAT to zCDM
     if (pwalletMain->isZeromintEnabled ())
         pwalletMain->AutoZeromint ();
 
@@ -3959,7 +3959,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                 REJECT_INVALID, "block-version");
         }
 
-        // Condominium
+        // Catalyst
         // It is entierly possible that we don't have enough data and this could fail
         // (i.e. the block could indeed be valid). Store the block for later consideration
         // but issue an initial reject message.
@@ -5430,7 +5430,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             return false;
         }
 
-        // Condominium: We use certain sporks during IBD, so check to see if they are
+        // Catalyst: We use certain sporks during IBD, so check to see if they are
         // available. If not, ask the first peer connected for them.
         if (!pSporkDB->SporkExists(SPORK_14_NEW_PROTOCOL_ENFORCEMENT) &&
             !pSporkDB->SporkExists(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2) &&
