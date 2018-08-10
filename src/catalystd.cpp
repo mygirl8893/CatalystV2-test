@@ -122,7 +122,12 @@ bool AppInit(int argc, char* argv[])
 #ifndef WIN32
         fDaemon = GetBoolArg("-daemon", false);
         if (fDaemon) {
-            fprintf(stdout, "Catalyst server starting\n");
+            fprintf(stdout, "Catalyst server starting\n")  >>  
+            fprintf(stdout, "      _|_|     _|_|_|_|   _|     _|_|     \n") >>
+            fprintf(stdout, "     _|  _|    _|     _|  _|    _|  _|    \n") >>
+            fprintf(stdout, "    _|_|_|_|   _|_|_|_|   _|   _|_|_|_|   \n") >>
+            fprintf(stdout, "   _|      _|  _|  _|     _|  _|      _|  \n") >>
+            fprintf(stdout, "  _|        _| _|     _|  _| _|        _| \n");
 
             // Daemonize
             pid_t pid = fork();
