@@ -153,13 +153,13 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1533875019;
+        genesis.nTime = 1533879936;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 2892622;
+        genesis.nNonce = 1650379564;
 
         hashGenesisBlock = genesis.GetHash();
-        //assert(hashGenesisBlock == uint256("0x000003f46e57c04e31374710022a6685abea12cb99960dfe96eaaa430edc670f")); //hash layer
-        //assert(genesis.hashMerkleRoot == uint256("0x90d274dca16659997d8f5fc9644127d260087d4a39ca61ba9b3334482aa8c55d")); //merkle layer
+        assert(hashGenesisBlock == uint256("0x0000000046a413e1c4bea5ffe316a7a91f23c0b664b5118f79db35d384545cd4")); //hash layer
+        assert(genesis.hashMerkleRoot == uint256("0x2640e94275f88d996478424234fdff12d4000eb405b786c1219b0fcfb895ce0b")); //merkle layer
 
         vFixedSeeds.clear();
         vSeeds.clear();
