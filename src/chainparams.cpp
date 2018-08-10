@@ -104,7 +104,7 @@ public:
         pchMessageStart[1] = 0x48;
         pchMessageStart[2] = 0x77;
         pchMessageStart[3] = 0x69;
-        vAlertPubKey = ParseHex("0370a5a13eb54a2e37bd896127737138884fcc5cf7231fdf9a0e1c5ca61f023c36");
+        vAlertPubKey = ParseHex("04d058b260b1e3fd965c2e89d7aeb105b65d235bb398774825016763530e37bf2c9d8647c62be5769358ccfc2d65548d4c6134374aa39627d6f16d21273aa9c4ae");
         nDefaultPort = 11200;
         bnProofOfWorkLimit = ~uint256(0) >> 20; //20 Condominium starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210000;
@@ -223,7 +223,7 @@ public:
         pchMessageStart[1] = 0x14;
         pchMessageStart[2] = 0x1a;
         pchMessageStart[3] = 0x81;
-        vAlertPubKey = ParseHex("042292b1f401860eea99e1a8a103effbd7e1c013a59a1a3a0c91c9d1997a0bc6f338567278c11344802838c107055bf7c1641eaed61e879245c255a4f5be5746fc");
+        vAlertPubKey = ParseHex("04b61d35be0c07bf275132ac7d6003c7f6ad64531f1ebcfb3acda52eb1e09e98058dc3a2b53c099606b159a97f4adeb32b9af4bffc9d16fad56a01a16a4759929d");
         nDefaultPort = 11210;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
