@@ -163,7 +163,7 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-    	//vSeeds.push_back(CDNSSeedData("seed1.catalyst.cash", "seed1.catalyst.cash"));             // seed1
+    	vSeeds.push_back(CDNSSeedData("185.151.31.59", "185.151.31.59"));             // seed1
         //vSeeds.push_back(CDNSSeedData("seed2.catalyst.cash", "seed2.catalyst.cash"));             // seed2
 
 
