@@ -252,9 +252,9 @@ public:
 	       hashGenesisBlock = genesis.GetHash();
         //assert(hashGenesisBlock == uint256("0x000007cff63ef602a51bf074e384b3516f0dd202f14d52f7c8c9b1af9423ab2e"));
 
-        vFixedSeeds.clear();
-        vSeeds.clear();
-        // vSeeds.push_back(CDNSSeedData("45.76.61.28", "207.148.0.129"));         // Single node address
+        //vFixedSeeds.clear();
+        //vSeeds.clear();
+        vSeeds.push_back(CDNSSeedData("185.151.31.59", "185.151.31.59"));         // Single node address
         // vSeeds.push_back(CDNSSeedData("209.250.240.94", "45.77.239.30"));       // Single node address
         // vSeeds.push_back(CDNSSeedData("45.77.176.204", "45.76.226.204"));       // Single node address
 
