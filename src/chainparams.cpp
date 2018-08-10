@@ -54,7 +54,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x0"));
+    (0, uint256("0x001"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     0, // * UNIX timestamp of last checkpoint block
@@ -100,10 +100,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0xc1;
-        pchMessageStart[1] = 0xbb;
-        pchMessageStart[2] = 0x7b;
-        pchMessageStart[3] = 0x35;
+        pchMessageStart[0] = 0x34;
+        pchMessageStart[1] = 0x48;
+        pchMessageStart[2] = 0x77;
+        pchMessageStart[3] = 0x69;
         vAlertPubKey = ParseHex("0370a5a13eb54a2e37bd896127737138884fcc5cf7231fdf9a0e1c5ca61f023c36");
         nDefaultPort = 11200;
         bnProofOfWorkLimit = ~uint256(0) >> 20; //20 Condominium starting difficulty is 1 / 2^12
@@ -121,11 +121,11 @@ public:
         nMaxMoneyOut = 3500000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 600;
+        nLastPOWBlock = 99814;
         nModifierUpdateBlock = 999999999;
-        nZerocoinStartHeight = 601;
+        nZerocoinStartHeight = 99815;
         nAccumulatorStartHeight = 1;
-        nZerocoinStartTime = 1527974340; // 14 - apr - 2018
+        nZerocoinStartTime = 1533875575; // 10 - aug - 2018
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = ~1; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = ~1; //First block that bad serials emerged
@@ -142,7 +142,7 @@ public:
             genesis.hashMerkleRoot = 90d274dca16659997d8f5fc9644127d260087d4a39ca61ba9b3334482aa8c55d
 
          */
-        const char* pszTimestamp = "AriA Launched 2018";
+        const char* pszTimestamp = "AriA Launched for Masternodes";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -153,7 +153,7 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1533637869;
+        genesis.nTime = 1533875019;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 2892622;
 
@@ -219,10 +219,10 @@ public:
     {
         networkID = CBaseChainParams::TESTNET;
         strNetworkID = "test";
-        pchMessageStart[0] = 0x43;
-        pchMessageStart[1] = 0x76;
-        pchMessageStart[2] = 0x65;
-        pchMessageStart[3] = 0xba;
+        pchMessageStart[0] = 0x3f;
+        pchMessageStart[1] = 0x14;
+        pchMessageStart[2] = 0x1a;
+        pchMessageStart[3] = 0x81;
         vAlertPubKey = ParseHex("042292b1f401860eea99e1a8a103effbd7e1c013a59a1a3a0c91c9d1997a0bc6f338567278c11344802838c107055bf7c1641eaed61e879245c255a4f5be5746fc");
         nDefaultPort = 11210;
         nEnforceBlockUpgradeMajority = 51;
@@ -302,10 +302,10 @@ public:
         networkID = CBaseChainParams::REGTEST;
         strNetworkID = "regtest";
         strNetworkID = "regtest";
-        pchMessageStart[0] = 0x69;
-        pchMessageStart[1] = 0xcf;
-        pchMessageStart[2] = 0x7e;
-        pchMessageStart[3] = 0xac;
+        pchMessageStart[0] = 0x5b;
+        pchMessageStart[1] = 0x41;
+        pchMessageStart[2] = 0x10;
+        pchMessageStart[3] = 0x83;
         nSubsidyHalvingInterval = 150;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
