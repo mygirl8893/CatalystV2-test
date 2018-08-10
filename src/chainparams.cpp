@@ -161,8 +161,10 @@ public:
         //assert(hashGenesisBlock == uint256("0x000003f46e57c04e31374710022a6685abea12cb99960dfe96eaaa430edc670f")); //hash layer
         //assert(genesis.hashMerkleRoot == uint256("0x90d274dca16659997d8f5fc9644127d260087d4a39ca61ba9b3334482aa8c55d")); //merkle layer
 
-    	vSeeds.push_back(CDNSSeedData("seed1.catalyst.cash", "seed1.catalyst.cash"));             // seed1
-        vSeeds.push_back(CDNSSeedData("seed2.catalyst.cash", "seed2.catalyst.cash"));             // seed2
+        vFixedSeeds.clear();
+        vSeeds.clear();
+    	//vSeeds.push_back(CDNSSeedData("seed1.catalyst.cash", "seed1.catalyst.cash"));             // seed1
+        //vSeeds.push_back(CDNSSeedData("seed2.catalyst.cash", "seed2.catalyst.cash"));             // seed2
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 28); // C
