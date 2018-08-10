@@ -254,7 +254,7 @@ public:
 
         //vFixedSeeds.clear();
         //vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("185.151.31.59", "185.151.31.59"));         // Single node address
+        //vSeeds.push_back(CDNSSeedData("185.151.31.59", "185.151.31.59"));         // Single node address
         // vSeeds.push_back(CDNSSeedData("209.250.240.94", "45.77.239.30"));       // Single node address
         // vSeeds.push_back(CDNSSeedData("45.77.176.204", "45.76.226.204"));       // Single node address
 
