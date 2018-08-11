@@ -20,8 +20,8 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
     unitlist.append(CATALYST);
-    unitlist.append(mCDM);
-    unitlist.append(uCDM);
+    unitlist.append(mXAT);
+    unitlist.append(uXAT);
     return unitlist;
 }
 
@@ -29,8 +29,8 @@ bool BitcoinUnits::valid(int unit)
 {
     switch (unit) {
     case CATALYST:
-    case mCDM:
-    case uCDM:
+    case mXAT:
+    case uXAT:
         return true;
     default:
         return false;
@@ -41,11 +41,11 @@ QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
     case CATALYST:
-        return QString("cdm");
-    case mCDM:
-        return QString("mcdm");
-    case uCDM:
-        return QString::fromUtf8("ucdm");
+        return QString("xat");
+    case mXAT:
+        return QString("mxat");
+    case uXAT:
+        return QString::fromUtf8("uxat");
     default:
         return QString("???");
     }
@@ -56,22 +56,22 @@ QString BitcoinUnits::name(int unit)
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
         case CATALYST:
-            return QString("CDM");
-        case mCDM:
-            return QString("mCDM");
-        case uCDM:
-            return QString::fromUtf8("μCDM");
+            return QString("XAT");
+        case mXAT:
+            return QString("mXAT");
+        case uXAT:
+            return QString::fromUtf8("μXAT");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
         case CATALYST:
-            return QString("tCDM");
-        case mCDM:
-            return QString("mtCDM");
-        case uCDM:
-            return QString::fromUtf8("μtCDM");
+            return QString("tXAT");
+        case mXAT:
+            return QString("mtXAT");
+        case uXAT:
+            return QString::fromUtf8("μtXAT");
         default:
             return QString("???");
         }
@@ -84,9 +84,9 @@ QString BitcoinUnits::description(int unit)
         switch (unit) {
         case CATALYST:
             return QString("CATALYST");
-        case mCDM:
+        case mXAT:
             return QString("Milli-CATALYST (1 / 1" THIN_SP_UTF8 "000)");
-        case uCDM:
+        case uXAT:
             return QString("Micro-CATALYST (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
@@ -94,11 +94,11 @@ QString BitcoinUnits::description(int unit)
     } else {
         switch (unit) {
         case CATALYST:
-            return QString("TestCDMs");
-        case mCDM:
-            return QString("Milli-TestCDM (1 / 1" THIN_SP_UTF8 "000)");
-        case uCDM:
-            return QString("Micro-TestCDM (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            return QString("TestXATs");
+        case mXAT:
+            return QString("Milli-TestXAT (1 / 1" THIN_SP_UTF8 "000)");
+        case uXAT:
+            return QString("Micro-TestXAT (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
@@ -110,9 +110,9 @@ qint64 BitcoinUnits::factor(int unit)
     switch (unit) {
     case CATALYST:
         return 100000000;
-    case mCDM:
+    case mXAT:
         return 100000;
-    case uCDM:
+    case uXAT:
         return 100;
     default:
         return 100000000;
@@ -124,9 +124,9 @@ int BitcoinUnits::decimals(int unit)
     switch (unit) {
     case CATALYST:
         return 8;
-    case mCDM:
+    case mXAT:
         return 5;
-    case uCDM:
+    case uXAT:
         return 2;
     default:
         return 0;

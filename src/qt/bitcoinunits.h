@@ -59,8 +59,8 @@ public:
      */
     enum Unit {
         CATALYST,
-        mCDM,
-        uCDM
+        mXAT,
+        uXAT
     };
 
     enum SeparatorStyle {
