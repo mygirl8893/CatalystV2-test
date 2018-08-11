@@ -15,16 +15,16 @@
 #define CLIENT_VERSION_IS_RELEASE true
 
 /* Major version */
-#define CLIENT_VERSION_MAJOR 1
+#define CLIENT_VERSION_MAJOR 2
 
 /* Minor version */
 #define CLIENT_VERSION_MINOR 1
 
 /* Build revision */
-#define CLIENT_VERSION_REVISION 0
+#define CLIENT_VERSION_REVISION 2
 
 /* Version is release */
-#define COPYRIGHT_YEAR 2017
+#define COPYRIGHT_YEAR 2018
 
 /* Define to 1 to enable wallet functions */
 #define ENABLE_WALLET 1
@@ -274,7 +274,7 @@
 #define PACKAGE_NAME "Catalyst Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "Catalyst Core 2.0.0"
+#define PACKAGE_STRING "Catalyst Core 2.1.2"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "catalyst"
@@ -283,7 +283,7 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "1.1.0"
+#define PACKAGE_VERSION "2.1.2"
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */

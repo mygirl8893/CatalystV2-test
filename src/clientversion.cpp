@@ -44,8 +44,8 @@ const std::string CLIENT_NAME("Catalyst Core");
 
 //! git will put "#define GIT_ARCHIVE 1" on the next line inside archives.
 #ifdef GIT_ARCHIVE
-#define GIT_COMMIT_ID "cbcb549"
-#define GIT_COMMIT_DATE "Tue, 9 Feb 2016 16:54:57 -0500"
+#define GIT_COMMIT_ID "8ce496a"
+#define GIT_COMMIT_DATE "Sun, 12 August 2018 4:16:57 -0500"
 #endif
 
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \
