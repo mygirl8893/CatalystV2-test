@@ -234,7 +234,7 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return QVariant(nZeromintPercentage);
         case ZeromintPrefDenom:
             return QVariant(nPreferredDenom);
-        case AnonymizeCatalystAmount:
+        case AnonymizeAriAAmount:
             return QVariant(nAnonymizeAriAAmount);
         case Listen:
             return settings.value("fListen");
