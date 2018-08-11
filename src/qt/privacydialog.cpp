@@ -14,7 +14,7 @@
 #include "sendcoinsentry.h"
 #include "walletmodel.h"
 #include "coincontrol.h"
-#include "zcondominiumcontroldialog.h"
+#include "zcatalystcontroldialog.h"
 #include "spork.h"
 
 #include <QClipboard>
