@@ -79,10 +79,10 @@ void OptionsModel::Init()
         settings.setValue("nZeromintPercentage", 10);
     nZeromintPercentage = settings.value("nZeromintPercentage").toLongLong();
 
-    if (!settings.contains("nAnonymizeCatalystAmount"))
-        settings.setValue("nAnonymizeCatalystAmount", 1000);
+    if (!settings.contains("nAriACatalystAmount"))
+        settings.setValue("nAriACatalystAmount", 1000);
 
-    nAnonymizeCatalystAmount = settings.value("nAnonymizeCatalystAmount").toLongLong();
+    nAnonymizeAriAAmount = settings.value("nAnonymizeAriAAmount").toLongLong();
 
     if (!settings.contains("fShowMasternodesTab"))
         settings.setValue("fShowMasternodesTab", masternodeConfig.getCount());
@@ -151,8 +151,8 @@ void OptionsModel::Init()
         SoftSetArg("-zeromintpercentage", settings.value("nZeromintPercentage").toString().toStdString());
     if (settings.contains("nPreferredDenom"))
         SoftSetArg("-preferredDenom", settings.value("nPreferredDenom").toString().toStdString());
-    if (settings.contains("nAnonymizeCatalystAmount"))
-        SoftSetArg("-anonymizecatalystamount", settings.value("nAnonymizeCatalystAmount").toString().toStdString());
+    if (settings.contains("nAnonymizeAriAAmount"))
+        SoftSetArg("-anonymizeariaamount", settings.value("nAnonymizeAriAAmount").toString().toStdString());
 
     language = settings.value("language").toString();
 }
@@ -235,7 +235,7 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
         case ZeromintPrefDenom:
             return QVariant(nPreferredDenom);
         case AnonymizeCatalystAmount:
-            return QVariant(nAnonymizeCatalystAmount);
+            return QVariant(nAnonymizeAriAAmount);
         case Listen:
             return settings.value("fListen");
         default:
@@ -350,10 +350,10 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             emit preferredDenomChanged(nPreferredDenom);
             break;
 
-        case AnonymizeCatalystAmount:
-            nAnonymizeCatalystAmount = value.toInt();
-            settings.setValue("nAnonymizeCatalystAmount", nAnonymizeCatalystAmount);
-            emit anonymizeCatalystAmountChanged(nAnonymizeCatalystAmount);
+        case AnonymizeAriAAmount:
+            nAnonymizeAriAAmount = value.toInt();
+            settings.setValue("nAnonymizeAriAAmount", nAnonymizeAriAAmount);
+            emit anonymizeAriAAmountChanged(nAnonymizeAriAAmount);
             break;
         case CoinControlFeatures:
             fCoinControlFeatures = value.toBool();
