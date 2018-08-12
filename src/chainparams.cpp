@@ -153,12 +153,12 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1533879936;
+        genesis.nTime = 1534038327;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 1650379564;
 
         hashGenesisBlock = genesis.GetHash();
-        //assert(hashGenesisBlock == uint256("0x0000000046a413e1c4bea5ffe316a7a91f23c0b664b5118f79db35d384545cd4")); //hash layer
+        assert(hashGenesisBlock == uint256("0x00000e3e661780a69ce12577440947f85bd7c97c9299c00ad6672fd7fb57442d")); //hash layer
         //assert(genesis.hashMerkleRoot == uint256("0x2640e94275f88d996478424234fdff12d4000eb405b786c1219b0fcfb895ce0b")); //merkle layer
 
         vFixedSeeds.clear();
@@ -250,7 +250,7 @@ public:
         genesis.nNonce = 79855;
 
 	       hashGenesisBlock = genesis.GetHash();
-        //assert(hashGenesisBlock == uint256("0x000007cff63ef602a51bf074e384b3516f0dd202f14d52f7c8c9b1af9423ab2e"));
+        //assert(hashGenesisBlock == uint256("0x000003db50c8bb02b79d775f31d6cae6f7e4d270914d0dc66b208d4c3869669e"));
 
         //vFixedSeeds.clear();
         //vSeeds.clear();
