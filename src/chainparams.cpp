@@ -125,7 +125,7 @@ public:
         nModifierUpdateBlock = 999999999;
         nZerocoinStartHeight = 99815;
         nAccumulatorStartHeight = 1;
-        nZerocoinStartTime = 1533875575; // 10 - aug - 2018
+        nZerocoinStartTime = 1534181321; // 10 - aug - 2018
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = ~1; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = ~1; //First block that bad serials emerged
@@ -153,7 +153,7 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1534208226;
+        genesis.nTime = 1534181321;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 4085187072;
 
