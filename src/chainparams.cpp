@@ -155,11 +155,11 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1534038327;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 1650379564;
+        genesis.nNonce = 1516765696;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000e3e661780a69ce12577440947f85bd7c97c9299c00ad6672fd7fb57442d")); //hash layer
-        //assert(genesis.hashMerkleRoot == uint256("0x2640e94275f88d996478424234fdff12d4000eb405b786c1219b0fcfb895ce0b")); //merkle layer
+        assert(hashGenesisBlock == uint256("0x00000c6c09d2a61f932674e003a02d79978a8b8dc2ecfdf4c7039d9bc4506fb0")); //hash layer
+        assert(genesis.hashMerkleRoot == uint256("0x97ed51a4366149aa4ca6eb101315ba5368e4ef3f1e9402cf50a120dda7b55622")); //merkle layer
 
         vFixedSeeds.clear();
         vSeeds.clear();
