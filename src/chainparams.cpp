@@ -54,7 +54,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (1, uint256("0x00000ecd2460e10325d1f7cc59240c5248c6998a520fae829125d3e17da82ae0"));
+    (0, uint256("0x001"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     0, // * UNIX timestamp of last checkpoint block
@@ -158,8 +158,8 @@ public:
         genesis.nNonce = 4085187072;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000ecd2460e10325d1f7cc59240c5248c6998a520fae829125d3e17da82ae0")); //hash layer
-        assert(genesis.hashMerkleRoot == uint256("0xdf722e45ea3ed18a02d1a27d9b0f27a935f0a5458e6f05774d86b3576ef96142")); //merkle layer
+        //assert(hashGenesisBlock == uint256("0x00000ecd2460e10325d1f7cc59240c5248c6998a520fae829125d3e17da82ae0")); //hash layer
+        //assert(genesis.hashMerkleRoot == uint256("0xdf722e45ea3ed18a02d1a27d9b0f27a935f0a5458e6f05774d86b3576ef96142")); //merkle layer
 
         vFixedSeeds.clear();
         vSeeds.clear();
