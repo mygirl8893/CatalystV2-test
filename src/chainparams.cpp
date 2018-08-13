@@ -54,7 +54,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (1, uint256("0x00000c6c09d2a61f932674e003a02d79978a8b8dc2ecfdf4c7039d9bc4506fb0"));
+    (0, uint256("0x001"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     0, // * UNIX timestamp of last checkpoint block
@@ -153,13 +153,13 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1534038327;
+        genesis.nTime = 1534208226;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 1516765696;
+        genesis.nNonce = 4085187072;
 
         hashGenesisBlock = genesis.GetHash();
-        //assert(hashGenesisBlock == uint256("0x00000c6c09d2a61f932674e003a02d79978a8b8dc2ecfdf4c7039d9bc4506fb0")); //hash layer
-        //assert(genesis.hashMerkleRoot == uint256("0x97ed51a4366149aa4ca6eb101315ba5368e4ef3f1e9402cf50a120dda7b55622")); //merkle layer
+        assert(hashGenesisBlock == uint256("0x00000ecd2460e10325d1f7cc59240c5248c6998a520fae829125d3e17da82ae0")); //hash layer
+        assert(genesis.hashMerkleRoot == uint256("0xdf722e45ea3ed18a02d1a27d9b0f27a935f0a5458e6f05774d86b3576ef96142")); //merkle layer
 
         vFixedSeeds.clear();
         vSeeds.clear();
