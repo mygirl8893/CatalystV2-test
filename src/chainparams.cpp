@@ -125,7 +125,7 @@ public:
         nModifierUpdateBlock = 999999999;
         nZerocoinStartHeight = 99815;
         nAccumulatorStartHeight = 1;
-        nZerocoinStartTime = 1534181321; // 10 - aug - 2018
+        nZerocoinStartTime = 1534214645; // 10 - aug - 2018
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = ~1; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = ~1; //First block that bad serials emerged
@@ -153,13 +153,13 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1534181321;
+        genesis.nTime = 1534214645;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 4085187072;
+        genesis.nNonce = 3354198016;
 
         hashGenesisBlock = genesis.GetHash();
-        //assert(hashGenesisBlock == uint256("0x00000ecd2460e10325d1f7cc59240c5248c6998a520fae829125d3e17da82ae0")); //hash layer
-        //assert(genesis.hashMerkleRoot == uint256("0xdf722e45ea3ed18a02d1a27d9b0f27a935f0a5458e6f05774d86b3576ef96142")); //merkle layer
+        assert(hashGenesisBlock == uint256("0x00000f8a990a7a9292a47f60365706cc68f5926c53c28a3bf4a196cec6f2a7d3")); //hash layer
+        assert(genesis.hashMerkleRoot == uint256("0x6e8e9a77fbeb6ed4ba92ed08a2b29d89429e236d5739ebc6d887a4084829f38b")); //merkle layer
 
         vFixedSeeds.clear();
         vSeeds.clear();
