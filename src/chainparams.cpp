@@ -3,6 +3,7 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
 // Copyright (c) 2017 The Condominium developers
+// Copyright (c) 2018 The AriA developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -158,11 +159,10 @@ public:
         genesis.nNonce = 3354198016;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000f8a990a7a9292a47f60365706cc68f5926c53c28a3bf4a196cec6f2a7d3")); //hash layer
-        assert(genesis.hashMerkleRoot == uint256("0x6e8e9a77fbeb6ed4ba92ed08a2b29d89429e236d5739ebc6d887a4084829f38b")); //merkle layer
+	//AriA-Updates hardfork[segwit 8]
+        //assert(hashGenesisBlock == uint256("0x00000f8a990a7a9292a47f60365706cc68f5926c53c28a3bf4a196cec6f2a7d3")); //hash layer
+        //assert(genesis.hashMerkleRoot == uint256("0x6e8e9a77fbeb6ed4ba92ed08a2b29d89429e236d5739ebc6d887a4084829f38b")); //merkle layer
 
-        vFixedSeeds.clear();
-        vSeeds.clear();
     	vSeeds.push_back(CDNSSeedData("185.151.31.59", "185.151.31.59"));             // seed1
         //vSeeds.push_back(CDNSSeedData("seed2.catalyst.cash", "seed2.catalyst.cash"));             // seed2
 
