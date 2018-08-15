@@ -1,0 +1,249 @@
+Release notes 3.0
+
+- upload to github
+- added change for files
+- reset work
+
+Release notes 3.0.1
+
+- change cores
+- update setting
+- update rpc and blockindicies
+- added checkpoint
+  a. checkpoint cores
+  b. checkpoint payment_gate
+
+Release notes 3.0.2
+
+- checpoint added
+  - recover lost checkpoint
+  - updates new chain run and simple
+  - fixed chain
+- checkpoint 6/4/2018
+  - improve chain
+  - wallet log
+- checkpoint 6/5/2018
+  - added log
+  - improve wallet
+  - remove unecessary file
+
+Release notes 3.0.3
+
+- checkpoint 6/6/2018
+  - update transfer
+  - fixed update for autoremove transaction chain
+  - faster block
+
+- checkpoint 6/9/2018
+  - improve wallet from bytecoin models
+  - crypto patch from karbo
+  - upgrade core system with PoS and MN support
+
+Release notes 3.0.4
+
+- checkpoint 6/14/2018
+  - improve hash cores
+  - improve masternodes
+  - improve PoS
+  - super nodes increase rpc value
+  - remotes checkpoint
+  - dust test transaction
+  - long hash stop for solo on SN[Super Nodes][like gpu solos]
+  - block point added
+  - parent block fixed
+  - added confirmation log rpc
+  - security increases
+  - android support
+
+- checkpoint 6/15/2018
+  - revert work to checkpoint date 13
+  - ignore aliases bug
+  - ignore passwork on simple_wallet cuz bug on address
+  - made checkpoint today 12:00 pm
+
+- checkpoint 6/16/2018
+  - fixed alias as bug. removed!
+  - revert to old checkpoint. upgrade checkpoint level
+  - new string on daemon
+  - android fixed
+
+- checkpoint 6/17/2018
+  - cross chain added
+  - fixed old wallet bug
+  - backup fixed
+  - fixed alias by move to android
+
+Release notes 3.0.5
+
+- checkpoint 6/19/2018
+  - added merchant wallet[building]
+  - added masternodes wallet[building]
+  - fixed nice hash attack
+  - alternative chain fixed
+
+- checkpoint 6/20/2018
+  - transaction id fixed
+  - fixed bug from loop diff
+
+- checkpoint 6/21/2018
+  - fixed pool transaction
+  - fixed diff
+  - fixed merge mining
+  - wallet sync fixed
+  - revert back merge mining to currency
+
+- checkpoint 6/22/2018
+  - fixed mem-pool faster
+  - added ban for mempool
+  - added print ban
+
+Release notes 3.0.6
+
+- checkpoint 6/24/2018
+  - implemeted LWMA-2 version fixed
+  - upgrade to for new major block 5
+  - fixed bug and remove LWMA-1 trace
+
+- checkpoint 6/25/2018
+  - tidy structure
+  - added on transaction
+  - added max mixin
+  - fixed cores transaction
+  - fixed fusion + fee transaction
+  - block chain faster
+  - add top block hash
+  - fixed gui build
+  - add lite wallet build
+  - rename class to new version
+
+- checkpoint 6/26/2018
+  - add doxyfile by homdx
+  - fixed capitalize 0 or o
+  - welcome to homdx
+  - added gui
+
+- checkpoint 6/27/2018
+  - added rpc auth
+  - added block fee by niobio[disable and enable feature]
+  - fixed some minor bug
+  - pool size using command line
+  - remove annoyed  tx verification failed messages
+  - remove double name testnet prefix
+  - Reduce log messages on pushing block
+
+Release notes 3.0.7
+
+- checkpoint 6/28/2018
+  - implemented heavy
+  - better pow call
+  - password fixed
+  - fixed slow hash
+  - add The Niobio Developer as contibutor list
+  - The Italo Developer as contibutor list
+  - fixed major bug on heavy
+  - get_payments method now returns confirmations
+
+- checkpoint 6/30/2018
+  - some rest and idle fixed
+
+- checkpoint 7/1/2018
+  - upgrading platform
+  - code improved
+
+Release notes 3.0.8
+
+- checkpoint 7/2/2018
+  - code upgrade
+  - dynamic modular integrated
+  - minor breaker
+  - updates some string
+  - updates blockchain rules
+  - updates modular
+
+- checkpoint 7/3/2018
+  - enable slow reward and slow miner
+  - fixed minor bugs
+
+- checkpoint 7/4/2018
+  - masternodes implemented
+  - bug fixed major
+
+- checkpoint 7/6/2018
+  - fixed some bug masternodes
+
+- checkpoint 7/7/2018
+  - added validate address
+  - added new cells
+
+- checkpoint 7/9/2018
+  - added split cell[4]
+
+- checkpoint 7/16/2018
+  - minor fixed
+
+- checkpoint 7/17/2018
+  - minor fixed
+
+Release notes 3.0.9
+
+- checkpoint 7/18/2018
+  - updates core
+  - change structure
+  - fixed cells
+
+Release notes 4.0.x
+
+- checkpoint 7/28/2018
+  - change platform
+  - Enable point of sales
+  - Enable Minting
+  - Enable supernodes
+  - Fee controls
+  - New Platform
+  - Dns Auto Fixed
+  - Generate reward by random difficulty
+
+- checkpoint 7/29/2018
+  - fatal coin orphan fixed
+  - difficulty control
+  - tokens is not overloaded
+  - minting check and control reward fixed
+  
+- checkpoint 8/3/2018
+  - fixed genesis block
+  - platform rebuilding
+  - fixed seed
+  - hardcode genesis
+  - emercoin fork finish
+  - emer seed remove
+
+- checkpoint 8/4/2018
+  - dns emer sync with labs
+  - bitcoin code merge zEtA platform
+  - consesus updates fork emercoin 8/3/2018
+  - prepare zEtA files
+  - consesus updates fork emercoin 8/4/2018
+
+- checkpoint 8/8/2018
+  - remove emercoin hash
+  - branding
+  - masternodes
+  - fixed some brand
+  - issue chain conflict dash fixed
+  - updates bignum fixed by emercoin developer and peer developer
+
+- checkpoint 8/11/2018
+  - mining rpc fixed by emercoin
+  - rpc reading stake by emercoin
+
+- checkpoint 8/13/2018
+  - updates gui final
+  - fixed gui and remove prefix
+  - tags remove updates code cores
+
+Release notes 4.1.x
+
+- checkpoint 8/15/2018
+  - updates segwit 8
+  - restructure AriA
+  - cores code revert
