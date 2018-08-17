@@ -154,14 +154,14 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1534214645;
+        genesis.nTime = 1534426868;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 3354198016;
+        genesis.nNonce = 3522234496;
 
         hashGenesisBlock = genesis.GetHash();
 	//AriA-Updates hardfork[segwit 8]
-        //assert(hashGenesisBlock == uint256("0x00000f8a990a7a9292a47f60365706cc68f5926c53c28a3bf4a196cec6f2a7d3")); //hash layer
-        //assert(genesis.hashMerkleRoot == uint256("0x6e8e9a77fbeb6ed4ba92ed08a2b29d89429e236d5739ebc6d887a4084829f38b")); //merkle layer
+        assert(hashGenesisBlock == uint256("0x00000caba15d4c5a2ee721c8b69824356154c4bf8ecb290a753cdb1c60facaba")); //hash layer
+        assert(genesis.hashMerkleRoot == uint256("0x77800842c666ad12b93d33ac847e1e4506b79c699efd309554424a4526068826")); //merkle layer
 
     	vSeeds.push_back(CDNSSeedData("185.151.31.59", "185.151.31.59"));             // seed1
         //vSeeds.push_back(CDNSSeedData("seed2.catalyst.cash", "seed2.catalyst.cash"));             // seed2
